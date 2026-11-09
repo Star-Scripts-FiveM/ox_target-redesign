@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="eye">
+      <div id="dot" class="dot"></div>
+      <svg id="eyeSvg" class="eyeSvg" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 48 48">
+        <defs>
+          <linearGradient id="vcSunset" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#ff2e88" />
+            <stop offset="1" stop-color="#ff9a3c" />
+          </linearGradient>
+        </defs>
+        <!-- idle: white outline eye -->
+        <g class="eye-idle" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round">
+          <path d="M3 24C9 14 16 10 24 10s15 4 21 14c-6 10-13 14-21 14S9 34 3 24z" />
+          <circle cx="24" cy="24" r="6.5" />
+        </g>
+        <!-- active: sunset eye, iris opens -->
+        <g class="eye-active">
+          <path d="M3 24C9 14 16 10 24 10s15 4 21 14c-6 10-13 14-21 14S9 34 3 24z" fill="none" stroke="url(#vcSunset)" stroke-width="3" stroke-linejoin="round" />
+          <circle class="iris" cx="24" cy="24" r="8" fill="url(#vcSunset)" />
+        </g>
+        <circle class="pupil" cx="24" cy="24" r="3" />
+      </svg>
+    </div>
+    <div id="options-wrapper"></div>
+    <div id="editor">
+      <div id="editor-panel">
+        <h1>Target Design</h1>
+        <p class="editor-sub">Pick how the target eye and options look. Click a design, then save.</p>
+        <div id="editor-grid"></div>
+        <div id="editor-actions">
+          <button id="editor-cancel" type="button">Cancel</button>
+          <button id="editor-save" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+    <script defer type="module" src="js/main.js"></script>
+  </body>
+</html>
